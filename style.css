@@ -1,0 +1,233 @@
+@import url(https://fonts.googleapis.com/css?family=Unbounded:200,300,regular,500,600,700,800,900);
+
+:root {
+  --primary-color: #d5ff40;
+  --secondary-color: #171717;
+  --black--color: #292929;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Unbounded", sans-serif;
+}
+
+body {
+  background-color: var(--secondary-color) !important;
+  transition: 500ms ease;
+
+  padding-top: 65px;
+}
+
+#header {
+  background-color: var(--primary-color);
+  padding-bottom: 70px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+nav {
+  background-color: var(--primary-color) !important;
+  transition: 500ms ease;
+}
+
+.nav-on-scroll {
+  background-color: var(--black--color) !important;
+}
+
+.nav-on-scroll .navbar-brand {
+  color: #fff !important;
+}
+
+.nav-on-scroll .close {
+  color: #fff !important;
+}
+.nav-on-scroll .open {
+  color: #fff !important;
+}
+
+.nav-on-scroll .nav-link:active,
+.nav-on-scroll .nav-link:hover,
+.nav-on-scroll .nav-link:focus {
+  color: #fff !important;
+}
+.nav-link:active,
+.nav-link:focus,
+.nav-link:hover {
+  color: #000000 !important;
+  transition: 400ms ease;
+}
+
+button[aria-expanded="false"] > .close {
+  display: none;
+}
+button[aria-expanded="true"] > .open {
+  display: none;
+}
+
+.bi {
+  font-size: 26px;
+}
+
+.main-header {
+  padding-top: 100px;
+}
+.main-header h1 {
+  font-size: 140px;
+}
+.skill button {
+  border: 1px solid var(--black--color);
+  border-radius: 100px;
+  background-color: transparent;
+  padding: 5px 10px;
+  transition: 400ms ease;
+  color: var(--black--color);
+}
+
+.skill button:hover {
+  color: #fff;
+  background-color: var(--black--color);
+}
+
+.about {
+  background-color: var(--black--color);
+  border-radius: 30px;
+  width: 90%;
+}
+
+.about p {
+  text-align: justify;
+  text-indent: 50px;
+  line-height: 28px;
+}
+
+.card {
+  background-color: var(--primary-color) !important;
+  width: 90%;
+  margin: auto;
+  border-radius: 30px !important;
+  display: flex;
+  flex-direction: row !important;
+  padding: 30px;
+  align-items: center;
+}
+
+#github-profil {
+  margin-bottom: 40px;
+}
+.avatar {
+  width: 300px;
+  border-radius: 50px 10px 50px 20px;
+}
+
+.user-info {
+  margin-left: 40px;
+}
+
+.user-info ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  max-width: 500px;
+  font-size: 20px;
+  margin-top: 20px;
+  gap: 30px;
+}
+
+.repo {
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--black--color) !important;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.line {
+  height: 2px;
+  width: 90%;
+  margin: auto;
+  background-color: var(--black--color);
+}
+.sosial-media {
+  gap: 50px;
+}
+
+.carousel {
+  background-color: var(--black--color);
+  width: 90%;
+  margin: auto;
+  color: #fff;
+  border-radius: 30px;
+  max-height: 400px !important;
+}
+
+.content-carousel img {
+  width: 400px;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .main-header h1 {
+    font-size: 40px;
+  }
+  .skill button {
+    font-size: 12px;
+  }
+
+  .skill {
+    gap: 10px;
+  }
+
+  .about p {
+    text-align: justify;
+    text-indent: 50px;
+    line-height: 20px;
+    font-size: 12px;
+  }
+
+  .about {
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+
+  .card {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  .user-info ul {
+    font-size: 14px;
+  }
+
+  .user-info {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+
+  .avatar {
+    width: 200px;
+  }
+
+  .copyright {
+    font-size: 14px;
+  }
+
+  .sosial-media {
+    gap: 30px;
+  }
+  .carousel img {
+    width: 300px;
+  }
+
+  .caption-carousel {
+    display: none;
+  }
+}
