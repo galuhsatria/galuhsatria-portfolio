@@ -192,6 +192,18 @@ button[aria-expanded="true"] > .open {
   border-radius: 10px;
 }
 
+@media (min-width: 600px) and (max-width: 801px) {
+  .skill {
+    gap: 20px;
+  }
+  .caption-carousel {
+    display: none;
+  }
+
+  .user-info ul {
+    font-size: 16px;
+  }
+}
 @media (min-width: 320px) and (max-width: 480px) {
   .main-header h1 {
     font-size: 40px;
@@ -248,5 +260,9 @@ button[aria-expanded="true"] > .open {
 
   .caption-carousel {
     display: none;
+  }
+
+  .my-youtube h1 {
+    font-size: 20px !important;
   }
 }
