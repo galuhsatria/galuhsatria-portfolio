@@ -8,23 +8,23 @@ window.addEventListener("scroll", () => {
   }
 });
 
-const APIURL = "https://api.github.com/users/";
+const API_URL = "https://api.github.com/users/";
 
 const githubProfil = document.getElementById("github-profil");
 
 async function getUser(username) {
-  const { data } = await axios(APIURL + username);
+  const { data } = await axios(API_URL + username);
   createUserCard(data);
   getRepos(username);
 }
 
 async function getRepos(username) {
-  const { data } = await axios(APIURL + username + "/repos?sort=created");
+  const { data } = await axios(API_URL + username + "/repos?sort=created");
   addReposToCard(data);
 }
 
 function createUserCard(user) {
-  const userID = user.name || user.login;
+  const idUser = user.name || user.login;
   const userBio = user.bio ? `<p>${user.bio}</p>` : "";
   const cardHTML = `
     <div class="card">
@@ -32,7 +32,7 @@ function createUserCard(user) {
       <img src="${user.avatar_url}" alt="${user.name}" class="avatar">
     </div>
     <div class="user-info">
-      <h2>${userID}</h2>
+      <h2>${idUser}</h2>
       ${userBio}
       <ul>
         <li>${user.followers} <strong>Followers</strong></li>
@@ -62,3 +62,25 @@ function addReposToCard(repos) {
 }
 
 getUser("galuhsatria");
+
+const getVideo = (iframe) => {
+  const CHENNEL_ID = "UCvp1-YrLcRjKipkw3x_VVww";
+  const CHENNEL_URL = encodeURIComponent(`https://www.youtube.com/feeds/videos.xml?channel_id=${CHENNEL_ID}`);
+  const REQUEST_URL = `https://api.rss2json.com/v1/api.json?rss_url=${CHENNEL_URL}`;
+
+  fetch(REQUEST_URL)
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+      const videoNumber = iframe.getAttribute("vnum");
+      const link = result.items[videoNumber].link;
+      const id = link.substr(link.indexOf("=") + 1);
+      iframe.setAttribute("src", `https://youtube.com/embed/${id}?controls=0&autoplay=1`);
+    })
+    .catch((error) => console.log("error", error));
+};
+
+const iframes = document.getElementsByClassName("latestVideoEmbed");
+for (let i = 0, len = iframes.length; i < len; i++) {
+  getVideo(iframes[i]);
+}

@@ -173,7 +173,25 @@ button[aria-expanded="true"] > .open {
 
 .content-carousel img {
   width: 400px;
+  height: 270px;
 }
+
+.my-youtube {
+  width: 90%;
+  margin: auto;
+  background-color: var(--black--color) !important;
+  border-radius: 30px;
+}
+.video-youtube {
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+.latestVideoEmbed {
+  border-radius: 10px;
+}
+
 @media (min-width: 320px) and (max-width: 480px) {
   .main-header h1 {
     font-size: 40px;
@@ -225,6 +243,7 @@ button[aria-expanded="true"] > .open {
   }
   .carousel img {
     width: 300px;
+    height: 200px;
   }
 
   .caption-carousel {
